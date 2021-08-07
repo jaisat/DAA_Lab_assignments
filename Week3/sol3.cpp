@@ -29,7 +29,7 @@ void merge(int arr[],int l, int mid, int r)
     int i=0,j=0,k=l;
     while(i<n1 && j<n2)
     {
-        if(a[i]<b[j])
+        if(a[i]<=b[j])
         {
             arr[k]=a[i];
             k++;i++;
@@ -54,7 +54,7 @@ void mergeSort(int arr[],int l, int r)
 {
     if(l<r)
     {
-        int mid = (l+r)/2;
+        int mid = l+(r-l)/2;
         mergeSort(arr,l,mid);
         mergeSort(arr,mid+1,r);
 
@@ -69,8 +69,6 @@ void solve()
     for(int i=0;i<n;i++)
     cin>>arr[i];
     mergeSort(arr,0,n-1);
-    // for(int i=0;i<n;i++)
-    // cout<<arr[i]<<" ";
     bool f=0;
     for(int i=0;i<n-1;i++)
     {
